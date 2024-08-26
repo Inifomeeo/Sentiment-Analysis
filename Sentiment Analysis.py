@@ -27,3 +27,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 vectorizer = TfidfVectorizer()
 X_train_vectors = vectorizer.fit_transform(X_train)
 X_test_vectors = vectorizer.transform(X_test)
+
+model = SVC()
+model.fit(X_train_vectors, y_train)
