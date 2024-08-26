@@ -30,3 +30,10 @@ X_test_vectors = vectorizer.transform(X_test)
 
 model = SVC()
 model.fit(X_train_vectors, y_train)
+
+y_pred = model.predict(X_test_vectors)
+
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+print("Accuracy Score:", accuracy_score(y_test, y_pred))
