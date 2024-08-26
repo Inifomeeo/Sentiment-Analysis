@@ -18,3 +18,8 @@ df['tokens'] = df['text'].apply(nltk.word_tokenize)  # Tokenization
 # Remove stopwords
 stopwords = nltk.corpus.stopwords.words('english')
 df['tokens'] = df['tokens'].apply(lambda x: [word for word in x if word not in stopwords])
+
+X = df['text']
+y = df['sentiment']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
